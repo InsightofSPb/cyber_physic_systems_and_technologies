@@ -28,17 +28,19 @@ $i(n) = K_1u(n-1) + K_2i(n-1) +\varepsilon$ where\
 $K_1 = \frac{1 - e^{\frac{-R}{L}Td}}{R}$\
 $K_2 = e^{\frac{-R}{L}Td}$\
 $\varepsilon$ is sensor measurement noise.\
-The matrix of factors is written as follows:\
+The matrix of factors is written as follows:
+```math
 $X = \begin{bmatrix}
-u(1)& i(1)\\
-u(2)& i(2)\\
-:& :\\
-u(n-1)& i(n-1)\\
+u(1)& i(1)\
+u(2)& i(2)\
+:& :\
+u(n-1)& i(n-1)
 \end{bmatrix}$\
+```
 The vector of the considered variable looks like $y = [i(2),i(3),...,i(n)]^T$\
 This equation $i(n) = K_1u(n-1) + K_2i(n-1) +\varepsilon$ can be written as follows for a series of measurements:\
 $y = X * k + \varepsilon$ and the parametr <i>k</i> can by found by OLS method (ordinary least squares method):
-$k = (X^TX)^{-1}X^Ty$\\
+$k = (X^TX)^{-1}X^Ty$\
 Estimations of the unknown parameters are:\
 $\hat{R} = \frac{1 - \hat{k}_2}{\hat{k}_1}$\
 $\hat{T_e} = -\frac{T_d}{ln \hat{k}_2}$\
